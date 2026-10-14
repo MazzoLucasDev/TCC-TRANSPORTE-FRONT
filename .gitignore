@@ -3,6 +3,11 @@
 # dependencies
 node_modules/
 
+.env
+.env.local
+.env.*.local
+.env.test
+
 # Expo
 .expo/
 dist/
@@ -39,3 +44,6 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+.agents
+.claude
+.windsurf
