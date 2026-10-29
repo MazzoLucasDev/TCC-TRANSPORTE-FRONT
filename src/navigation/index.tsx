@@ -10,6 +10,7 @@ import { CreateVanScreen } from "../screens/driver/CreateVanScreen";
 import { StudentHomeScreen } from "../screens/student/StudentHomeScreen";
 import { VanStudentsScreen } from "../screens/driver/VanStudentsScreen";
 import { LinkStudentScreen } from "../screens/driver/LinkStudentScreen";
+import { TodayStudentsScreen } from "../screens/driver/TodayStudentsScreen";
 import { AbsenceScreen } from "../screens/student/AbsenceScreen";
 import { colors } from "../theme";
 import { RouteScreen } from "../screens/driver/RouteScreen";
@@ -76,6 +77,11 @@ export function Navigation() {
               name="LinkStudent"
               component={LinkStudentScreen}
               options={{ title: "Vincular aluno" }}
+            />
+            <Stack.Screen
+              name="TodayStudents"
+              component={TodayStudentsScreen}
+              options={{ title: "Alunos de hoje" }}
             />
             <Stack.Screen
               name="Route"
