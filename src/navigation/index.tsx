@@ -10,7 +10,9 @@ import { CreateVanScreen } from "../screens/driver/CreateVanScreen";
 import { StudentHomeScreen } from "../screens/student/StudentHomeScreen";
 import { VanStudentsScreen } from "../screens/driver/VanStudentsScreen";
 import { LinkStudentScreen } from "../screens/driver/LinkStudentScreen";
+import { AbsenceScreen } from "../screens/student/AbsenceScreen";
 import { colors } from "../theme";
+import { RouteScreen } from "../screens/driver/RouteScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -75,13 +77,25 @@ export function Navigation() {
               component={LinkStudentScreen}
               options={{ title: "Vincular aluno" }}
             />
+            <Stack.Screen
+              name="Route"
+              component={RouteScreen}
+              options={{ title: "Rota de hoje" }}
+            />
           </>
         ) : (
-          <Stack.Screen
-            name="StudentHome"
-            component={StudentHomeScreen}
-            options={{ title: "Início" }}
-          />
+          <>
+            <Stack.Screen
+              name="StudentHome"
+              component={StudentHomeScreen}
+              options={{ title: "Início" }}
+            />
+            <Stack.Screen
+              name="Absence"
+              component={AbsenceScreen}
+              options={{ title: "Avisar ausência" }}
+            />
+          </>
         )}
       </Stack.Navigator>
     </NavigationContainer>

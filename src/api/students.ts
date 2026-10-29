@@ -38,3 +38,24 @@ export async function unlinkStudentFromVan(studentId: string) {
   const { data } = await api.post("/students/unlink", { studentId });
   return data;
 }
+export type MyProfile = {
+  studentId: string;
+  name: string;
+  phone: string;
+  collectionPoint: { lat: number; long: number };
+  van: {
+    id: string;
+    model: string;
+    period: string;
+    destiny: string;
+    emTrajeto: boolean;
+    driver: { name: string; phone: string } | null;
+  } | null;
+  attendance: { date: string; status: "PRESENT" | "ABSENT" };
+};
+
+// date no formato AAAA-MM-DD: dia cuja presença você quer consultar
+export async function getMyProfile(date: string): Promise<MyProfile> {
+  const { data } = await api.get("/students/me", { params: { date } });
+  return data;
+}

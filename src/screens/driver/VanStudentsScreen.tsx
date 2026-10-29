@@ -100,6 +100,11 @@ export function VanStudentsScreen({ route, navigation }: any) {
           title="Vincular aluno"
           onPress={() => navigation.navigate("LinkStudent", { vanId })}
         />
+        <Button
+          title="Gerar rota de hoje"
+          variant="outline"
+          onPress={() => navigation.navigate("Route", { vanId })}
+        />
       </View>
     </View>
   );
